@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Survey";
+}
+@model Survey
+<h1><b>Dojo Survey</b></h1>
+    <form asp-action ="Result" asp-controller="Home" method="post">
+
+        <label for="Name">Your Name:</label>
+        <input class="u-full-width" type="text" name="Name"><br>
+        <span asp-validation-for="Name"></span>
+
+    
+        <label for="Locations">Dojo Location:</label>
+        <select class="u-full-width" name="Locations">
+            <option value="San Jose">San Jose, CA</option>
+            <option value="Seattle">Seattle, WA</option>
+            <option value="Chicago">Chicago, IL</option>
+            <option value="Dallas">Dallas, TX</option>
+            <option value="Los Angeles">Los Angeles, CA</option>
+            <option value="Oakland">Oakland, CA</option>
+            <option value="Orange County">Orange County, CA</option>
+            <option value="Silicon Valley">Silicon Valley, CA</option>
+            <option value="Tulsa">Tulsa, OK</option>
+        </select>
+        <span asp-validation-for="Locations"></span>
+
+        <label for="Languages">Favorite Language:</label>
+        <select class="u-full-width" name="Languages">
+            <option value="Python">Python</option>
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="JavaScript">JavaScript</option>
+        </select><br>
+        <span asp-validation-for="Languages"></span>
+        <label asp-for="Comments">Comment (Optional)</label>
+            <textarea class="u-full-width" id="Comments" name="Comments"></textarea><br>
+        <span asp-validation-for="Comments"></span>
+        <input class="button-primary" type="submit"  value="submit">
+    </form>
